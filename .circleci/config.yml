@@ -4,16 +4,19 @@ jobs:
     working_directory: ~/pixelgroup-home
     environment:
       IMAGE_TAG: ${CIRCLE_SHA1}
+      
+    machine: true
+      
 
     # In 2.0, we specify our Ruby version by using a public Docker image
-    docker:
-       - image: gerey/saasdemo-docker-image:latest
+    #docker:
+    #   - image: gerey/saasdemo-docker-image:latest
 
     steps:
       - checkout
 
-      - setup_remote_docker:
-          reusable: true
+     # - setup_remote_docker:
+     #     reusable: true
       
       - run: docker build -t gerey/pixelgroup-home-uwsgi:${CIRCLE_SHA1} uwsgi
       - run: docker build -t gerey/pixelgroup-home-nginx:${CIRCLE_SHA1} nginx
