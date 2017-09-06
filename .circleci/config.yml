@@ -34,7 +34,8 @@ jobs:
     working_directory: ~/pixelgroup-home
     docker:
        - image: gerey/saasdemo-docker-image:latest
-
+    parallelism: 2
+    resource_class: large
     steps:
       - checkout
 
