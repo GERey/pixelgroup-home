@@ -33,6 +33,7 @@ jobs:
     docker:
        - image: gerey/saasdemo-docker-image:latest
 
+    parallelism: 2
     steps:
       - checkout
 
