@@ -4,6 +4,9 @@ jobs:
     working_directory: ~/pixelgroup-home
     environment:
       IMAGE_TAG: ${CIRCLE_SHA1}
+      
+    resource_class: small
+    parallelism: 2
 
     # In 2.0, we specify our Ruby version by using a public Docker image
     docker:
