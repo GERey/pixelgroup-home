@@ -29,6 +29,8 @@ jobs:
 
   test:
     working_directory: ~/pixelgroup-home
+    resource_class: small
+    parallelism: 3
     docker:
        - image: gerey/saasdemo-docker-image:latest
 
