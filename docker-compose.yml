@@ -1,0 +1,8 @@
+uwsgi:
+  image: "gerey/pixelgroup-home-uwsgi:${CIRCLE_SHA1}"
+nginx:
+  image: "gerey/pixelgroup-home-nginx:${CIRCLE_SHA1}"
+  links:
+    - uwsgi
+  ports:
+    - "8080"
